@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        ul {
+            padding: 5px 8px;
+        }
+        li {
+            color: white;
+            list-style: none;
+        }
+        li h2 {
+            background-color: rgb(201, 144, 255);
+            font-size: 1em;
+            list-style: none;
+            padding: 0px 0px;
+            margin: 5px 0px 0px 0px;
+        }
+        p {
+            text-align: left;
+        }
+        li.active h2 {
+            background-color: blueviolet;
+        }
+        li.active>div {
+            display: block;
+        }
+        li>h2:hover {
+            cursor: pointer;
+            background-color: rgba(137, 43, 226, 0.608);
+        }
+        li>div {
+            padding: 8px 15px;
+            background-color: #ffa954;
+            border-radius: 0px 0px 20px 20px;
+            display: none;
+        }
+        @media (min-width:0px) {
+            li {
+                width: 100%;
+                text-align: center;
+            }
+            ul>div {
+                position: relative;
+            }
+        }
+        @media (min-width:768px) {
+            li,li h2 {
+                display: inline;
+                padding: 2px 8px;
+            }
+            ul div {
+                position: absolute;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active" onclick="showTab(1)">
+            <h2> Tab 1 </h2>
+
+            <div class=" ">
+                <h1> This is The Tab 1 Content</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </li>
+        <li onclick="showTab(2)">
+            <h2> Tab 2</h2>
+            <div>
+                <h1> This is The Tab 2 Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+        <li onclick="showTab(3)">
+            <h2> Tab 3 </h2>
+
+            <div>
+                <h1> This is The Tab 3 Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+        <li onclick="showTab(4)">
+            <h2> Tab 4</h2>
+            <div>
+                <h1> This is The Tab 4 Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+        <li onclick="showTab(5)">
+            <h2> Tab 5 </h2>
+            <div>
+                <h1> This is The Tab 5 Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+        <li onclick="showTab(6)">
+            <h2> Tab 6 </h2>
+            <div>
+                <h1> This is The Tab 6 Content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </li>
+    </ul>
+    function showTab(liIndex) {
+        tabs = document.getElementsByTagName('li');
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].className = "";
+        }
+        tabs[liIndex - 1].className = "active";
+    }
+    <script>
+        // the class 'active' will be added to the <li> element when the user clicks on it
+        function showTab(liIndex) {
+            tabs = document.getElementsByTagName('li');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].className = "";
+            }
+            tabs[liIndex - 1].className = "active";
+        }
+    </script>
+</body>
+
+</html>
